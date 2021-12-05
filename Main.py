@@ -92,7 +92,6 @@ while userName != "admin" or userPassword != "123":  # while loop to check usern
         loginAttempts += 1  # increments login attempt counter each time incorrect details entered
     else:  # if login attempts reach 3 attempts account locks
         print("Account has been blocked")
-        accountLock = True
         quit()
 
 # ------------------------------------------------ REQUIREMENT 3 ------------------------------------------------------#
@@ -186,24 +185,24 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
         view_user()  # prints the view user menu
         print("\nThere is/are ", len(allUserDetails), "records\n")
         records += 1
-        print("-" * 75)
+        print("-" * 35)
         for row in range(len(allUserDetails)):
             print("Record: ", records)
             records += 1
             s = (f"""\
-                        Name          : {allUserDetails[row][0]} {allUserDetails[row][1]}
-                        Role          : {allUserDetails[row][2]}
-                        Department    : {allUserDetails[row][3]}
-                        Username      : {allUserDetails[row][4]}
-                        Password      : {allUserDetails[row][5]}""")
+Name          : {allUserDetails[row][0]} {allUserDetails[row][1]}
+Role          : {allUserDetails[row][2]}
+Department    : {allUserDetails[row][3]}
+Username      : {allUserDetails[row][4]}
+Password      : {allUserDetails[row][5]}""")
 
             maxlen = reduce(lambda x, y: max(x, len(y)), s.split("\n"), 0)
-            print(f"{s}\n{'-' * 75} \n")
+            print(f"{s}\n{'-' * 35} \n")
         records = 0
         print()
-        revealPasswords = input("""\n(Press 999 to see the user password - Warning user password view should get '
-              'permissions from super admin!)\n
-              Press 1 to return to Main Menu: """)  # asking user if they want to reveal or return
+        revealPasswords = input("""\nPress 999 to see the user passwords - (Warning user password view should get
+    permissions from super admin!) Press 1 to return to Main Menu: """)
+        # asking user if they want to reveal or return
 
 # ------------------------------------------------ REQUIREMENT 12 -----------------------------------------------------#
         while revealPasswords != ("999", "1"):  # loops while main selection isn't expected digits
@@ -212,19 +211,19 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
             elif revealPasswords == "999":
                 print("\nThere is/are ", len(allUserDetails), "records\n")
                 showRecords += 1
-                print("-" * 75)
+                print("-" * 35)
                 for row in range(len(allUserDetails)):
                     print("Record: ", showRecords)
                     showRecords += 1
                     s = (f"""\
-                Name          : {allUserDetails[row][0]} {allUserDetails[row][1]}
-                Role          : {allUserDetails[row][2]}
-                Department    : {allUserDetails[row][3]}
-                Username      : {allUserDetails[row][4]}
-                Password      : {allUserDetails[row][6]}""")
+Name          : {allUserDetails[row][0]} {allUserDetails[row][1]}
+Role          : {allUserDetails[row][2]}
+Department    : {allUserDetails[row][3]}
+Username      : {allUserDetails[row][4]}
+Password      : {allUserDetails[row][6]}""")
 
                     maxlen = reduce(lambda x, y: max(x, len(y)), s.split("\n"), 0)
-                    print(f"{s}\n{'-' * 75}\n")
+                    print(f"{s}\n{'-' * 35}\n")
 
                 showRecords = 0
                 print()
