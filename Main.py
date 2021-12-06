@@ -369,8 +369,10 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                             updateSelection = input("\nInput number of field or press any to return to Menu 3: ")
                         if goAgain != "1":
                             continue
+# prints this else statement when either the user is not found when user input isn't correct or when returning back to
+#  the menu 3 indicating that the user selection has been cleared and a new user must be selected
             else:
-                print("\nUser not found")  # fix required here
+                print("\nUser not found / User selection scrubbed")
                 break
         else:
             print()
