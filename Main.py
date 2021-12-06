@@ -370,7 +370,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         if goAgain != "1":
                             continue
             else:
-                print("\nUser not found")
+                print("\nUser not found")  # fix required here
                 break
         else:
             print()
