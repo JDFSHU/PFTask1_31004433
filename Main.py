@@ -8,11 +8,10 @@ from functools import reduce
 loginAttempts = 1  # login attempt counter for admin login
 records = 0  # used for view user menu records counter
 showRecords = 0  # used for view user menu records counter for viewable passwords
-#  user details lists
 autoUsername = []  # used to hold auto generated username later on
 hiddenPassword = []  # used to hold auto generated hidden password later on
-users = []  # 1d list to place user details
-allUserDetails = []  # 2d list for non asterisked passwords
+users = []  # 1d list to place user details, later placed inside allUserDetails
+allUserDetails = []  # 2d list for all user details, wont be lost when users list emptied later
 
 
 def main_menu():  # function for main menu
@@ -214,7 +213,7 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
 # if option 2 on main menu the view_user() function is called and a for loop initiated to loop through the records in
 # the 2d list allUserDetails, a records counter is incremented by 1 each loop to show which record is which and is
 # cleared at the end once the loop has finished to ensure that viewing the users a second time still shows the correct
-# record numbers
+# record numbers. Used reduce and split here to ensure the print out of the details looks neat on the console
     elif mainSelection == "2":
         view_user()  # prints the view user menu
         print("\nThere is/are ", len(allUserDetails), "records\n")
