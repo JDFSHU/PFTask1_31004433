@@ -8,8 +8,6 @@ from functools import reduce
 loginAttempts = 1  # login attempt counter for admin login
 records = 0  # used for view user menu records counter
 showRecords = 0  # used for view user menu records counter for viewable passwords
-searchRecords = 0
-
 #  user details lists
 autoUsername = []  # used to hold auto generated username later on
 hiddenPassword = []  # used to hold auto generated hidden password later on
