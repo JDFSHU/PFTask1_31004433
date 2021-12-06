@@ -2,6 +2,9 @@ import string
 import random
 from functools import reduce
 
+# Name: Jacob Frazer
+# Student Number: 31004433
+
 loginAttempts = 1  # login attempt counter for admin login
 records = 0  # used for view user menu records counter
 showRecords = 0  # used for view user menu records counter for viewable passwords
