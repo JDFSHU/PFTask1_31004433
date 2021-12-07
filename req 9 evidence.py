@@ -2,13 +2,13 @@ import random
 import string
 
 
-def random_username():  # function that creates a random password when called
+def random_username():  # function that creates a random username when called
     chars = string.ascii_uppercase + string.ascii_lowercase + string.digits  # what characters are available to be used
-    size = random.randint(1, 2)  # what range the password can fall between
+    size = random.randint(1, 2)  # what range the username can fall between
     return firstName + lastName.join(random.choice(chars) for x in range(size))
 
 # because of how complex my random username generator is, its very unlikely that it will generate a username that is
-# identical to one that is already in the system, therefore I have created this seperate file to showcase that req 9
+# identical to one that is already in the system, therefore I have created this separate file to showcase that req 9
 # code actually works
 
 

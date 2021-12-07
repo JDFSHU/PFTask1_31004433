@@ -70,7 +70,8 @@ def random_password():  # function that creates a random password when called
     return ''.join(random.choice(chars) for x in range(size))
 
 
-def random_username():  # function that creates a random username when called
+def random_username():  # function that creates a random username when called by joining the first and last name with
+    # random digits and strings
     chars = string.ascii_lowercase + string.digits  # what characters are available to be used
     size = random.randint(1, 2)  # what range the username can fall between
     return firstName.lower() + lastName.lower().join(random.choice(chars) for x in range(size))
@@ -86,7 +87,7 @@ userPassword = input("Password : ")
 # ------------------------------------------------ REQUIREMENT 2 ------------------------------------------------------#
 # While loop to check user input is correct username and password is correct if not, login attempts are incremented by 1
 # if login attempts reaches 3 attempts, else statement kicks into effect and ends program
-while userName != "admin" or userPassword != "123":
+while userName != "admin" or userPassword != "admin123":
     if loginAttempts <= 2:  # starts counting from 0 1 2 = 3 attempts
         print("Attempt : ", loginAttempts)
         print("Invalid username and password!\n")
@@ -274,8 +275,8 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                 mainSelection = input("\nSelect a menu - input a number: ")  # main menu selection from user
                 break
             else:  # if user doesn't enter 1 or 999 then they are asked again until they get the right input
-                revealPasswords = input(("Select either 999 to view passwords !Super Admin! only or press 1 to"
-                                         "return to Main Menu: "))
+                revealPasswords = input(("Select either 999 to view passwords !Super Admin only! or press 1 to"
+                                         " return to Main Menu: "))
 
 # ------------------------------------------------ REQUIREMENT 13 -----------------------------------------------------#
 # if user selects main menu 3 the user search input is asked of the user, converted all user input to lowercase as all
