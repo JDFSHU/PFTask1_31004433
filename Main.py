@@ -216,11 +216,11 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
     elif mainSelection == "2":
         view_user()  # prints the view user menu
         print("\nThere is/are", len(allUserDetails), "records\n")
-        records += 1
+        records += 1  # records counter
         print("-" * 35)
         for row in range(len(allUserDetails)):
             print("Record: ", records)
-            records += 1
+            records += 1  # records counter incrementation
 # creating a new variable s which utilises f strings to allow me to print strings in front of the list elements
             s = (f"""\
 Name          : {allUserDetails[row][0]} {allUserDetails[row][1]}
@@ -246,7 +246,7 @@ Password      : {allUserDetails[row][5]}""")  # element 5 is the hidden password
                 revealPasswords = input("You have entered a non digit value, Select again: ")  # prompting reentry
             elif revealPasswords == "999":
                 print("\nThere is/are", len(allUserDetails), "records\n")
-                records += 1  # different records counter to ensure records continuity
+                records += 1
                 print("-" * 35)
                 for row in range(len(allUserDetails)):
                     print("Record: ", records)
@@ -306,11 +306,11 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
 
                     if updateSelection == "1":
                         newFirstName = input("\nInput new First Name: ")
-                        x[0] = newFirstName
+                        x[0] = newFirstName  # x is the list within the allUserDetails list [0] is the first name
                         print("\nUpdate Successful")
                         goAgain = input("\nPress 1 to update the same user again, press any to search new user: ")
                         if goAgain == "1":
-                            update_user()
+                            update_user()  # printing update user menu again
                             updateSelection = input("\nInput number of field or press any to return to Menu 3: ")
                         if goAgain != "1":
                             continue
@@ -363,10 +363,14 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         if goAgain != "1":
                             continue
 # prints this else statement when either the user is not found when user input isn't correct or when returning back to
-#  the menu 3 indicating that the user selection has been cleared and a new user must be selected
+# the menu 3 indicating that the user selection has been cleared and a new user must be selected, this save me many
+# extra lines of messy code that created more bugs than it solved
             else:
                 print("\nUser not found / User selection scrubbed")
                 break
+# if user chooses 1 on the searchUser input this else statement is initialised and the user is asked for main menu
+# input, this final else statement means that the entire program is navigable from every menu and the user doesn't have
+# to quit the program to return back to a specific menu except of course to log in
         else:
             print()
             main_menu()
