@@ -7,7 +7,6 @@ from functools import reduce
 
 loginAttempts = 1  # login attempt counter for admin login
 records = 0  # used for view user menu records counter
-showRecords = 0  # used for view user menu records counter for viewable passwords
 autoUsername = []  # used to hold auto generated username later on
 hiddenPassword = []  # used to hold auto generated hidden password later on
 users = []  # 1d list to place user details, later placed inside allUserDetails
@@ -216,7 +215,7 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
 # record numbers. Used reduce and split here to ensure the print out of the details looks neat on the console
     elif mainSelection == "2":
         view_user()  # prints the view user menu
-        print("\nThere is/are ", len(allUserDetails), "records\n")
+        print("\nThere is/are", len(allUserDetails), "records\n")
         records += 1
         print("-" * 35)
         for row in range(len(allUserDetails)):
@@ -246,12 +245,12 @@ Password      : {allUserDetails[row][5]}""")  # element 5 is the hidden password
             if not revealPasswords.isdigit():  # checking that main menu selection is a digit
                 revealPasswords = input("You have entered a non digit value, Select again: ")  # prompting reentry
             elif revealPasswords == "999":
-                print("\nThere is/are ", len(allUserDetails), "records\n")
-                showRecords += 1  # different records counter to ensure records continuity
+                print("\nThere is/are", len(allUserDetails), "records\n")
+                records += 1  # different records counter to ensure records continuity
                 print("-" * 35)
                 for row in range(len(allUserDetails)):
-                    print("Record: ", showRecords)
-                    showRecords += 1
+                    print("Record: ", records)
+                    records += 1
                     s = (f"""\
 Name          : {allUserDetails[row][0]} {allUserDetails[row][1]}
 Role          : {allUserDetails[row][2]}
@@ -262,7 +261,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                     maxlen = reduce(lambda x, y: max(x, len(y)), s.split("\n"), 0)
                     print(f"{s}\n{'-' * 35}\n")
 
-                showRecords = 0
+                records = 0
                 print()
                 main_menu()
                 mainSelection = input("\nSelect a menu - input a number: ")  # main menu selection from user
