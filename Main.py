@@ -87,7 +87,7 @@ userPassword = input("Password : ")
 # While loop to check user input is correct username and password is correct if not, login attempts are incremented by 1
 # if login attempts reaches 3 attempts, else statement kicks into effect and ends program
 while userName != "admin" or userPassword != "123":
-    if loginAttempts <= 2:
+    if loginAttempts <= 2:  # starts counting from 0 1 2 = 3 attempts
         print("Attempt : ", loginAttempts)
         print("Invalid username and password!\n")
         userName = input("Username : ")
@@ -215,8 +215,8 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
 # record numbers. Used reduce and split here to ensure the print out of the details looks neat on the console
     elif mainSelection == "2":
         view_user()  # prints the view user menu
-        print("\nThere is/are", len(allUserDetails), "records\n")
         records += 1  # records counter
+        print("\nThere is/are", len(allUserDetails), "records\n")
         print("-" * 35)
         for row in range(len(allUserDetails)):
             print("Record: ", records)
@@ -245,8 +245,8 @@ Password      : {allUserDetails[row][5]}""")  # element 5 is the hidden password
             if not revealPasswords.isdigit():  # checking that main menu selection is a digit
                 revealPasswords = input("You have entered a non digit value, Select again: ")  # prompting reentry
             elif revealPasswords == "999":
-                print("\nThere is/are", len(allUserDetails), "records\n")
                 records += 1
+                print("\nThere is/are", len(allUserDetails), "records\n")
                 print("-" * 35)
                 for row in range(len(allUserDetails)):
                     print("Record: ", records)
