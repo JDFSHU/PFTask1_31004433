@@ -231,7 +231,7 @@ Password      : {allUserDetails[row][5]}""")  # element 5 is the hidden password
 
             maxlen = reduce(lambda x, y: max(x, len(y)), s.split("\n"), 0)
             print(f"{s}\n{'-' * 35} \n")  # prints a new line in between each record
-        records = 0
+        records = 0  # resetting records back to 0 ready for the next time its looped
         print()
         revealPasswords = input("""\nPress 999 to see the user passwords - (Warning user password view should get
     permissions from super admin!) Press 1 to return to Main Menu: """)
@@ -273,7 +273,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                 main_menu()
                 mainSelection = input("\nSelect a menu - input a number: ")  # main menu selection from user
                 break
-            else:
+            else:  # if user doesn't enter 1 or 999 then they are asked again until they get the right input
                 revealPasswords = input(("Select either 999 to view passwords !Super Admin! only or press 1 to"
                                          "return to Main Menu: "))
 
@@ -303,8 +303,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
 # department, this is achieved by indexing the list that contains the username as x and then updating element positions
 # of x with user input or user selections of roles and departments available, user is able to update the same user or
 # return to menu 3 by hitting any key
-
-                    if updateSelection == "1":
+                    if updateSelection == "1":  # first name update code block
                         newFirstName = input("\nInput new First Name: ")
                         x[0] = newFirstName  # x is the list within the allUserDetails list [0] is the first name
                         print("\nUpdate Successful")
@@ -315,7 +314,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         if goAgain != "1":
                             continue
 
-                    if updateSelection == "2":
+                    if updateSelection == "2":  # Last name update code block
                         newLastName = input("\nInput new Last Name: ")
                         x[1] = newLastName
                         print("\nUpdate Successful")
@@ -326,7 +325,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         if goAgain != "1":
                             continue
 
-                    if updateSelection == "3":
+                    if updateSelection == "3":  # role update code block
                         print("\nSelect Role for the selected User")
                         print("1: User")
                         print("2: Admin")
@@ -343,7 +342,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         if goAgain != "1":
                             continue
 
-                    if updateSelection == "4":
+                    if updateSelection == "4":  # department update code block
                         print("\nSelect Department for the selected User")
                         print("1: Administration")
                         print("2: Operation")
@@ -377,7 +376,7 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
             mainSelection = input("\nSelect a menu - input a number: ")  # main menu selection from user
 
     elif mainSelection == "4":
-        print("\nYou have logged out")  # self explanatory but when user choose 4 on the main menu, the program finishes
+        print("\nYou have logged out")  # When user choose 4 on the main menu, the program finishes
         quit()  # quit function to close program
 
 # -------------------------------------------------REQUIREMENT 4 ------------------------------------------------------#
