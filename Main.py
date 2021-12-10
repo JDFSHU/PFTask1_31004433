@@ -4,6 +4,7 @@ from functools import reduce
 
 # Name: Jacob Frazer
 # Student Number: 31004433
+# Computer Networks
 
 loginAttempts = 1  # login attempt counter for admin login
 records = 0  # used for view user menu records counter
@@ -88,7 +89,7 @@ userPassword = input("Password : ")
 # While loop to check user input is correct username and password is correct if not, login attempts are incremented by 1
 # if login attempts reaches 3 attempts, else statement kicks into effect and ends program
 while userName != "admin" or userPassword != "admin123":
-    if loginAttempts <= 2:  # starts counting from 0 1 2 = 3 attempts
+    if loginAttempts <= 2:  # starts counting from 1 2 3 = 3 attempts
         print("Attempt : ", loginAttempts)
         print("Invalid username and password!\n")
         userName = input("Username : ")
