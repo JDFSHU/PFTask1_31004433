@@ -332,6 +332,9 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         print("1: User")
                         print("2: Admin")
                         newRole = input("\nInput number of field: ")
+                        while newRole != "1" and newRole != "2":
+                            print("Unrecognised Input!\n")
+                            newRole = input("\nInput number of field: ")
                         if newRole == "1":
                             x[2] = "User"
                             print("\nUpdate Successful")
@@ -351,6 +354,9 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         print("2: Operation")
                         print("3: Technology")
                         newDepartment = input("\nInput number of field: ")
+                        while newDepartment != "1" and newDepartment != "2" and newDepartment != "3":
+                            print("Unrecognised Input!\n")
+                            newDepartment = input("\nInput number of field: ")
                         if newDepartment == "1":
                             x[3] = "Administration"
                             print("\nUpdate Successful")
