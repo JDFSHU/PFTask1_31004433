@@ -127,8 +127,8 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
 # ------------------------------------------------ REQUIREMENT 9 ------------------------------------------------------#
 # random_username function randomly generates a username based on the first and last name the user inputted + some
 # random digits, if this new randomised username is found in the allUserDetails list then the new randomised username
-# is deleted autoUsername[-1] and another is randomly generated. Once username is checked and found to be unique, its
-# appended to autoUsername list
+# is deleted autoUsername[-1] and another is randomly generated.
+
         autoUsername.append((random_username()))
         for duplicate in allUserDetails:
             if duplicate[4] == autoUsername[-1]:
@@ -305,7 +305,9 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
 # based on user input of the update_user() menu function, the user is able to update first name, last name, role and
 # department, this is achieved by indexing the list that contains the username as x and then updating element positions
 # of x with user input or user selections of roles and departments available, user is able to update the same user or
-# return to menu 3 by hitting any key
+# return to menu 3 by hitting any key. while loops check user input for the role and department # selections and prompt
+# user to choose again if incorrect input.
+
                     if updateSelection == "1":  # first name update code block
                         newFirstName = input("\nInput new First Name: ")
                         x[0] = newFirstName  # x is the list within the allUserDetails list [0] is the first name
