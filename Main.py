@@ -334,9 +334,10 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         newRole = input("\nInput number of field: ")
                         if newRole == "1":
                             x[2] = "User"
+                            print("\nUpdate Successful")
                         if newRole == "2":
                             x[2] = "Admin"
-                        print("\nUpdate Successful")
+                            print("\nUpdate Successful")
                         goAgain = input("\nPress 1 to update the same user again, press any to search new user: ")
                         if goAgain == "1":
                             update_user()
@@ -352,11 +353,13 @@ Password      : {allUserDetails[row][6]}""")  # element 6 is the viewable passwo
                         newDepartment = input("\nInput number of field: ")
                         if newDepartment == "1":
                             x[3] = "Administration"
+                            print("\nUpdate Successful")
                         if newDepartment == "2":
                             x[3] = "Operation"
+                            print("\nUpdate Successful")
                         if newDepartment == "3":
                             x[3] = "Technology"
-                        print("\nUpdate Successful")
+                            print("\nUpdate Successful")
                         goAgain = input("\nPress 1 to update the same user again, press any to search new user: ")
                         if goAgain == "1":
                             update_user()
