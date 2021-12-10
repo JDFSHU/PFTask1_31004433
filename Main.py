@@ -130,15 +130,16 @@ while mainSelection != ("1", "2", "3", "4"):  # loops while main selection isn't
 # is deleted autoUsername[-1] and another is randomly generated. Once username is checked and found to be unique, its
 # appended to autoUsername list
         autoUsername.append((random_username()))
-        if autoUsername[-1] in allUserDetails:
-            print("\nGenerating new username and checking database")
-            print("\nUsername already exists generating new")
-            print("\nDuplicate username = ", autoUsername[-1])
-            del autoUsername[-1]  # deleting the last element in autoUsername that was just created
-            autoUsername.append(random_username())  # generating new username
+        for duplicate in allUserDetails:
+            if duplicate[4] == autoUsername[-1]:
+                print("\nGenerating new username and checking database")
+                print("\nUsername already exists generating new")
+                print("\nDuplicate username = ", autoUsername[-1])
+                del autoUsername[-1]
+                autoUsername.append(random_username())
+                print("New username = ", autoUsername[-1])
         else:
-            print("\nUsername provisionally generated Checked and OK!")  # will pretty much always print this due to
-            # username generation complexity
+            print("\nUsername provisionally generated Checked and OK!")
 
 # ------------------------------------------------ REQUIREMENT 6 ------------------------------------------------------#
 # selecting user role for the creation of a new user, user role menu is printed via function user_role() and then user
